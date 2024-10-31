@@ -6,6 +6,12 @@ Este projeto é uma aplicação web de um jogo de xadrez, desenvolvido com HTML,
 
 ## Tecnologias Utilizadas
 
+<div style="display:inline_block">
+   <img alt="html"  align="center" src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"/>
+   <img alt="CSS"  align="center" src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"/>
+   <img alt="Javascript"  align="center" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
+</div>
+
 - **HTML**: Estruturação da página web e definição do layout do tabuleiro de xadrez.
 - **CSS**: Estilização dos componentes da aplicação, incluindo o tabuleiro, peças e layout geral.
 - **JavaScript**: Implementação da lógica do jogo, controle de movimentos das peças, regras de captura e verificação de condições de vitória.

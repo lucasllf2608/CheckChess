@@ -1,4 +1,4 @@
-# CheckChess - Jogo de Xadre
+# CheckChess - Jogo de Xadrez
 
 ## Descrição
 

@@ -681,7 +681,131 @@ function checkWhite(n, values){
         }
 
     } else if ( target === "n"){
- 
+  
+        x = n;
+        if( x%8 > 1 && x%8 <6 ){
+            x -=17;
+            if(("otmvlw".indexOf(values[x]) >=0 || values[x] === 0) && x < 64 && x >= 0){
+                scopes.push(x);
+            }
+            x = n;
+            x -=15;
+            if(("otmvlw".indexOf(values[x]) >=0 || values[x] === 0) && x < 64 && x >= 0){
+                scopes.push(x);
+            }
+            x = n;
+            x -=10;
+            if(("otmvlw".indexOf(values[x]) >=0 || values[x] === 0) && x < 64 && x >= 0){
+                scopes.push(x);
+            }
+            x = n;
+            x -=6;
+            if(("otmvlw".indexOf(values[x]) >=0 || values[x] === 0) && x < 64 && x >= 0){
+                scopes.push(x);
+            }
+            x = n;
+            x +=6;
+            if(("otmvlw".indexOf(values[x]) >=0 || values[x] === 0) && x < 64 && x >= 0){
+                scopes.push(x);
+            }
+            x = n;
+            x +=10;
+            if(("otmvlw".indexOf(values[x]) >=0 || values[x] === 0) && x < 64 && x >= 0){
+                scopes.push(x);
+            }
+            x = n;
+            x +=15;
+            if(("otmvlw".indexOf(values[x]) >=0 || values[x] === 0) && x < 64 && x >= 0){
+                scopes.push(x);
+            }
+            x = n;
+            x +=17;
+            if(("otmvlw".indexOf(values[x]) >=0 || values[x] === 0) && x < 64 && x >= 0){
+                scopes.push(x);
+            }
+
+        } else {
+            x = n;
+            if(x%8 <=1){
+                x = n;
+                x -= 15;
+                if(("otmvlw".indexOf(values[x]) >= 0 ||values[x] === 0) && x < 64  && x >=0) {
+                    scopes.push(x);
+                }
+                x = n;
+                x -= 6;
+                if(("otmvlw".indexOf(values[x]) >= 0 ||values[x] === 0) && x < 64 && x >= 0 ) {
+                    scopes.push(x);
+                }
+                x = n;
+                x += 10;
+                if(("otmvlw".indexOf(values[x]) >= 0 ||values[x] === 0) && x < 64 && x >= 0) {
+                    scopes.push(x);
+                }
+                x = n;
+                x += 17;
+                if(("otmvlw".indexOf(values[x]) >= 0 ||values[x] === 0) && x < 64 && x >= 0) {
+                    scopes.push(x);
+                }
+            }
+
+            x = n;
+
+            if(x%8 === 1){
+                x -=17;
+                if(("otmvlw".indexOf(values[x]) >= 0 ||values[x] === 0) && x < 64 && x >= 0) {
+                    scopes.push(x);
+                }
+                x = n;
+                x += 15;
+                if(("otmvlw".indexOf(values[x]) >= 0 ||values[x] === 0) && x < 64 && x >= 0) {
+                    scopes.push(x);
+                }
+
+            }
+
+            if(x%8 >=6){
+                x = n;
+                x -= 17;
+                if(("otmvlw".indexOf(values[x]) >= 0 ||values[x] === 0) && x < 64 && x >= 0) {
+                    scopes.push(x);
+                }
+
+                x = n;
+                x -= 10;
+                if(("otmvlw".indexOf(values[x]) >= 0 ||values[x] === 0) && x < 64 && x >= 0) {
+                    scopes.push(x);
+                }
+                x = n;
+                x += 6;
+                if(("otmvlw".indexOf(values[x]) >= 0 ||values[x] === 0) && x < 64 && x >= 0) {
+                    scopes.push(x);
+                }
+
+                x = n;
+                x += 15;
+                if(("otmvlw".indexOf(values[x]) >= 0 ||values[x] === 0) && x < 64 && x >= 0) {
+                    scopes.push(x);
+                }
+            }
+            x = n;
+
+            if(x%8 === 6){
+                x = n;
+                x -= 15;
+                if(("otmvlw".indexOf(values[x]) >= 0 ||values[x] === 0) && x < 64 && x >= 0) {
+                    scopes.push(x);
+                }
+
+                x = n;
+                x += 17;
+                if(("otmvlw".indexOf(values[x]) >= 0 ||values[x] === 0) && x < 64 && x >= 0) {
+                    scopes.push(x);
+                }
+            }
+            
+        }
+
     } else if (target === "b"){
 
     } else if (target === "q") {

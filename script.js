@@ -57,15 +57,16 @@ window.onload = function () {
           for(var n=0; n<64; n++){
              if(Math.floor (n/8)%2==0){
                 if(n%2===0){
-                  sqs [n].style.background = '#9ff';
+                 sqs [n].style.background = '#fcce9c';
                 } else {
-                  sqs [n].style.background = '#5fa';
+                 sqs [n].style.background = '#d58d45';
+
                 }
              } else {
                 if(n%2 === 1 ){
-                    sqs[n].style.background = '#9ff';
+                   sqs [n].style.background = '#fcce9c';
                 } else {
-                    sqs[n].style.background = '#5fa';
+                    sqs [n].style.background = '#d58d45';
                 }
              }
           }

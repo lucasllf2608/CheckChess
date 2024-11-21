@@ -15,7 +15,7 @@ Este projeto é uma aplicação web de um jogo de xadrez, desenvolvido com HTML,
 ## Funcionalidades
 
 - Tabuleiro de xadrez interativo.
-- Movimentação das peças com drag and drop (arrastar e soltar).
+- Movimentação das peças com drag and drop (arrastar e soltar). - falta implementar
 - Validação de movimentos conforme as regras do xadrez.
-- Exibição de mensagens para jogadas inválidas.
+- Exibição de mensagens para jogadas inválidas. - falta implementar
 - Estilização personalizada para cada tipo de peça.

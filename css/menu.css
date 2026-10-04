@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    color: #fcce9c;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(213, 141, 69, 0.12), transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(252, 206, 156, 0.08), transparent 40%),
+        #000;
+}
+
+.menu {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.menu-card {
+    width: min(100%, 22rem);
+    padding: 2rem 1.75rem;
+    border: 1px solid rgba(252, 206, 156, 0.35);
+    border-radius: 12px;
+    background: rgba(20, 20, 20, 0.92);
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.menu-kicker {
+    margin: 0 0 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #d58d45;
+    font-family: sans-serif;
+}
+
+.menu-title {
+    margin: 0 0 0.75rem;
+    font-size: 2.25rem;
+    font-weight: normal;
+    letter-spacing: 0.04em;
+}
+
+.menu-subtitle {
+    margin: 0 0 1.75rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(252, 206, 156, 0.85);
+    font-family: sans-serif;
+}
+
+.menu-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.menu-btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: sans-serif;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.menu-btn--primary {
+    border: 1px solid #d58d45;
+    background: #d58d45;
+    color: #1a1208;
+}
+
+.menu-btn--primary:hover {
+    background: #fcce9c;
+    border-color: #fcce9c;
+}
+
+.menu-btn--ghost {
+    border: 1px solid rgba(252, 206, 156, 0.45);
+    background: transparent;
+    color: #fcce9c;
+}
+
+.menu-btn--ghost:hover {
+    border-color: #fcce9c;
+    background: rgba(252, 206, 156, 0.08);
+}

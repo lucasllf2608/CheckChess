@@ -4,6 +4,21 @@ body {
     background-color: #000;
 }
 
+.game-links {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0.5rem;
+    font-size: 0.8rem;
+    font-family: sans-serif;
+    display: flex;
+    gap: 0.75rem;
+    z-index: 2;
+}
+
+.game-links a {
+    color: #fcce9c;
+}
 
 .square {
     background-color: #aaffaa;

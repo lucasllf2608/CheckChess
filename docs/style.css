@@ -1,0 +1,170 @@
+:root {
+    --bg: #1a1a1e;
+    --panel: #25252c;
+    --text: #e8e6e3;
+    --muted: #9a968f;
+    --accent: #d58d45;
+    --accent-light: #fcce9c;
+    --link: #7eb8da;
+    --border: #3d3d45;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--link);
+}
+
+header {
+    background: linear-gradient(135deg, #2a2418 0%, var(--panel) 50%, #1e2830 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 1.5rem;
+}
+
+header h1 {
+    margin: 0 0 0.5rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+header p {
+    margin: 0;
+    color: var(--muted);
+    max-width: 52rem;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+section h2 {
+    font-size: 1.35rem;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent-light);
+}
+
+section h3 {
+    font-size: 1.05rem;
+    margin: 1.5rem 0 0.75rem;
+    color: var(--text);
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0;
+}
+
+.card ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+
+th {
+    color: var(--accent-light);
+    font-weight: 600;
+}
+
+code {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.88em;
+    background: #121216;
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+}
+
+.mermaid-wrap {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.mermaid-wrap .mermaid {
+    display: flex;
+    justify-content: center;
+}
+
+.compare {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .compare {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.compare h4 {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+}
+
+footer a {
+    margin: 0 0.5rem;
+}

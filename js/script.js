@@ -1139,18 +1139,82 @@ window.onload = function () {
     "position:fixed;top:0;left:0;margin:0.5rem;font-size:0.85rem;font-family:sans-serif;color:#fcce9c;z-index:2;pointer-events:none;";
   document.body.appendChild(turnStatus);
 
+  var popupBackdrop = document.createElement("div");
+  popupBackdrop.className = "game-popup-backdrop";
+  popupBackdrop.hidden = true;
+  popupBackdrop.innerHTML =
+    '<div class="game-popup" role="dialog" aria-modal="true" aria-labelledby="game-popup-title">' +
+    '<h2 class="game-popup__title" id="game-popup-title"></h2>' +
+    '<p class="game-popup__message"></p>' +
+    '<button type="button" class="game-popup__btn">OK</button>' +
+    "</div>";
+  document.body.appendChild(popupBackdrop);
+
+  var popupTitle = popupBackdrop.querySelector(".game-popup__title");
+  var popupMessage = popupBackdrop.querySelector(".game-popup__message");
+  var popupBtn = popupBackdrop.querySelector(".game-popup__btn");
+  var whiteCheckNotified = false;
+  var blackCheckNotified = false;
+  var gameOverNotified = false;
+
+  function hideGamePopup() {
+    popupBackdrop.hidden = true;
+  }
+
+  function showGamePopup(title, message) {
+    popupTitle.textContent = title;
+    popupMessage.textContent = message;
+    popupBackdrop.hidden = false;
+    popupBtn.focus();
+  }
+
+  popupBtn.addEventListener("click", hideGamePopup);
+  popupBackdrop.addEventListener("click", function (e) {
+    if (e.target === popupBackdrop) {
+      hideGamePopup();
+    }
+  });
+
+  function notifyCheckState() {
+    if (gameOver) {
+      return;
+    }
+    var whiteInCheck = isWhiteKingInCheck(values);
+    var blackInCheck = isBlackKingInCheck(values);
+
+    if (!whiteInCheck) {
+      whiteCheckNotified = false;
+    } else if (myTurn && !whiteCheckNotified) {
+      whiteCheckNotified = true;
+      showGamePopup(
+        "Xeque!",
+        "Seu rei está em xeque. Proteja-o com o próximo lance."
+      );
+    }
+
+    if (!blackInCheck) {
+      blackCheckNotified = false;
+    } else if (cpuThinking && !blackCheckNotified) {
+      blackCheckNotified = true;
+      showGamePopup("Xeque", "O rei preto está em xeque.");
+    }
+  }
+
   function updateTurnStatus() {
     if (gameOver) {
       turnStatus.textContent = gameOverMessage;
+      if (!gameOverNotified) {
+        gameOverNotified = true;
+        showGamePopup("Fim de jogo", gameOverMessage);
+      }
       return;
     }
     if (cpuThinking) {
       turnStatus.textContent = "Vez da CPU (pretas)...";
-      return;
-    }
-    if (myTurn) {
+    } else if (myTurn) {
       turnStatus.textContent = "Sua vez (brancas)";
     }
+    notifyCheckState();
   }
 
   function applyBlackMove(from, to) {
@@ -1248,7 +1312,10 @@ window.onload = function () {
       }
     } else if (moveScopes.indexOf(String(n)) >= 0) {
       if (!isLegalWhiteMove(moveTarget, n)) {
-        alert("Rei em perigo!");
+        showGamePopup(
+          "Rei em perigo!",
+          "Esse lance deixaria seu rei em xeque. Escolha outro destino."
+        );
       } else {
         values[n] = values[moveTarget];
         values[moveTarget] = 0;

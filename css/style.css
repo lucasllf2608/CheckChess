@@ -28,3 +28,60 @@ body {
     position: absolute;
     cursor: pointer;
 }
+
+.game-popup-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.72);
+}
+
+.game-popup-backdrop[hidden] {
+    display: none;
+}
+
+.game-popup {
+    max-width: 20rem;
+    width: 100%;
+    padding: 1.25rem 1.35rem;
+    border: 1px solid #d58d45;
+    border-radius: 8px;
+    background: #1a1a1a;
+    color: #fcce9c;
+    font-family: sans-serif;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+}
+
+.game-popup__title {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.game-popup__message {
+    margin: 0 0 1.1rem;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    color: #e8c89a;
+}
+
+.game-popup__btn {
+    min-width: 6rem;
+    padding: 0.45rem 1rem;
+    border: 1px solid #d58d45;
+    border-radius: 6px;
+    background: #d58d45;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.game-popup__btn:hover {
+    background: #fcce9c;
+}
